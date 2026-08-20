@@ -1,0 +1,90 @@
+Title: Chat Server
+Author: Brandon C Dickson
+Course: CS4012
+Project: Chatroom Project
+
+Description:
+This Chat Server program allows multiple clients to connect to a server and exchange messages in real-time. The server listens for incoming client connections, and once a client connects, it creates two tasks to handle communication between the server and the client. The program also provides a timeout feature that terminates a client's session if they are inactive for a certain period of time.
+
+Dependencies:
+- System
+- System.IO
+- System.Net
+- System.Net.Sockets
+- System.Threading.Tasks
+
+Classes:
+
+1. Program
+   - Main method
+   - BecomeServer method
+   - PCCS (Process Client Communication Stream) method
+
+Program Flow:
+
+1. The program starts by checking the command-line arguments for the server's port number and an optional "show" parameter. If the arguments are not provided or are incorrect, the program prints the usage and exits.
+
+2. The Main method then calls the BecomeServer method with the provided port number.
+
+3. The BecomeServer method creates a TcpListener object to listen for incoming connections on the specified port. It starts the listener and enters an infinite loop, accepting new client connections.
+
+4. When a new client connects, the BecomeServer method creates a Task for the PCCS method, which processes the communication between the server and the client.
+
+5. The PCCS method handles communication with the client. It assigns a unique client ID and sends a welcome message to the client. The method also enqueues a message to the MessageQueue, announcing the client's entry into the chat.
+
+6. The PCCS method then creates two tasks for handling communication between the server and the client:
+   a. toClientTask: Responsible for sending messages from the server to the client.
+   b. fromClientTask: Responsible for receiving messages from the client and processing them.
+
+7. The toClientTask continually dequeues messages from the MessageQueue and sends them to the client until the "bailOut" flag is set.
+
+8. The fromClientTask reads messages from the client and enqueues them to the MessageQueue. If the client sends a null message or a timeout occurs due to inactivity, the "bailOut" flag is set, and the client's session is terminated.
+
+9. When a client leaves the chat or is terminated, a message is enqueued to the MessageQueue to announce their exit.
+
+Notes:
+- The program depends on the external MessageQueue class for managing messages between clients. This class is not included in the code snippet provided.
+- The code snippet contains a commented-out line of code that calls the PCCS method without creating a new Task. This is noted as being non-thread-safe and should not be used.
+
+
+FOR RESUME:
+"Real-time Chat Server Application"
+
+- Developed a real-time chat room application using C# and .NET Framework, showcasing skills in network programming, multi-threading, and object-oriented design.
+- Implemented a custom, thread-safe message queue for efficient message distribution and management, demonstrating the ability to create and optimize data structures for real-world applications.
+- Designed the application to function as both a server and client, highlighting versatility in understanding and handling different roles in a networked environment, and adhering to TCP/IP communication protocols.
+
+DOCUMENTATION PART2
+THE FULL PROJECT OVERVIEW
+### Chat Room Project Overview
+
+This Chat Server program allows multiple clients to connect to a server and exchange messages in real-time. The server listens for incoming client connections, and once a client connects, it creates two tasks to handle communication between the server and the client. The program also provides a timeout feature that terminates a client's session if they are inactive for a certain period of time.
+
+1. ChatServer: This class handles the server-side logic of the application.
+2. MessageQueue: This static class manages a thread-safe message queue that stores and distributes messages to connected clients.
+
+#### ChatServer Class
+
+The `ChatServer` class contains the following methods:
+
+- `Main`: Entry point of the application. It accepts command-line arguments to determine if the application will run as a server or client and parses the necessary information such as IP address and port number.
+
+- `BecomeServer`: Sets up the server and listens for incoming client connections. It continuously accepts incoming connections and creates tasks to handle client communication.
+
+- `PCCS`: Processes communication between the server and the connected client. This method creates two tasks: one to send messages from the server to the client and another to receive messages from the client.
+
+- `BecomeClient`: Sets up the client and connects it to the specified server IP and port. It calls the `StartTasks` method to initiate the tasks responsible for client communication and waits for either task to complete before closing the client's connection.
+
+- `StartTasks`: Creates and starts two tasks for a connected client:
+  1. `tr` (Task Receive): Continuously reads incoming messages from the server and displays them on the client's console.
+  2. `tw` (Task Write): Continuously reads messages from the client's console and sends them to the server for further processing and distribution to other connected clients.
+
+#### MessageQueue Class
+
+The `MessageQueue` class is a static class that manages a thread-safe message queue. It provides methods to enqueue and dequeue messages, timestamps messages as they are received, and purges old messages. The main methods in this class are:
+
+- `Enqueue`: Adds a message to the queue along with the client ID (author).
+
+- `Dequeue`: Retrieves the oldest message in the queue with a timestamp greater (more recent) than the provided timestamp and with a different author than the client ID (iAm). If no such message exists, it waits for an Enqueue or bails out if the `bailOut` flag is set.
+
+- `Maintenance`: Periodically purges messages from the queue with timestamps older than 5 seconds. It is invoked from an asynchronous task started in the class static constructor.

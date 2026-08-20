@@ -1,0 +1,17 @@
+# .NET build output
+**/bin/
+**/obj/
+
+# IDE settings
+**/.vs/
+**/.vscode/
+*.user
+*.suo
+
+# macOS
+.DS_Store
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
