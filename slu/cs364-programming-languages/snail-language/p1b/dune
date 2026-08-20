@@ -1,0 +1,56 @@
+; (executable
+; (name test_p1b1)
+; (promote (until-clean))
+; (modules P1b1 Test_p1b1))
+
+; (executable
+; (name test_p1b2)
+; (promote (until-clean))
+; (modules P1b2 Test_p1b2))
+
+; (executable
+; (name test_p1b3)
+; (promote (until-clean))
+; (modules P1b3 Test_p1b3))
+
+; (executable
+; (name test_p1b4)
+; (promote (until-clean))
+; (modules P1btree P1b4 Test_p1b4))
+
+; (executable
+; (name test_p1b5)
+; (promote (until-clean))
+; (modules P1btree P1b5 Test_p1b5))
+
+; Create a library for P1btree
+(library
+ (name p1btree_lib)
+ (modules P1btree))
+
+(executable
+ (name test_p1b1)
+ (promote (until-clean))
+ (modules P1b1 Test_p1b1))
+
+(executable
+ (name test_p1b2)
+ (promote (until-clean))
+ (modules P1b2 Test_p1b2))
+
+(executable
+ (name test_p1b3)
+ (promote (until-clean))
+ (modules P1b3 Test_p1b3))
+
+(executable
+ (name test_p1b4)
+ (promote (until-clean))
+ (modules P1b4 Test_p1b4)
+ (libraries p1btree_lib))
+
+(executable
+ (name test_p1b5)
+ (promote (until-clean))
+ (modules P1b5 Test_p1b5)
+ (libraries p1btree_lib))

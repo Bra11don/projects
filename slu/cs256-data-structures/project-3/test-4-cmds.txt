@@ -1,0 +1,15 @@
+s
+t 00:00:00:00:00|43:29:99:01:18
+c hemoglobinic hemoglobinic hemoglobinic retruded
+g
+r
+d 2
+e 2
+m 19:72:81:94:33
+m 81:53:72:40:36
+g
+r
+s
+l
+s
+a 2

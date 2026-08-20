@@ -1,0 +1,96 @@
+<project name="CS256AntFile" default="dist" basedir=".">
+  <description>
+    Build file for CS 256 F22 Projects
+  </description>
+
+  <!-- TODO update these values as needed -->
+    <!--
+      look in the project spec for the project name. This is **not**
+      necessarily the name of the project on your computer.  Rather,
+      SLUGS uses this project name to run your code, so it must be consistent
+    -->
+  <property name="project-name" value="project3"/>
+    <!--
+      Enter the name of your main class in this project.  It might be
+      Main, but you can also choose another thame.  This is needed so that
+      SLUGS can find your main method.
+    -->
+  <property name="main-class" value="Main"/>
+  <!-- END TODO -->
+
+  <!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="build" location="build"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+  </target>
+
+  <path id="build-classpath">
+    <fileset dir="lib" erroronmissingdir="false">
+      <include name="**/*.jar"/>
+    </fileset>
+    <fileset dir="/java-libs" erroronmissingdir="false">
+      <include name="**/*.jar" />
+    </fileset>
+  </path>
+
+  <manifestclasspath property="lib.list" jarfile="${project-name}.jar" maxParentLevels="15">
+    <classpath refid="build-classpath"/>
+  </manifestclasspath>
+
+  <target name="compile" depends="init"
+          description="compile the source">
+    <!-- Compile the Java code from ${src} into ${build} -->
+    <javac destdir="${build}" debug="on">
+      <src path="${src}" />
+      <src path="." />
+      <classpath refid="build-classpath" />
+    </javac>
+  </target>
+
+  <target name="dist" depends="compile"
+          description="generate the distribution">
+
+    <!-- Put everything in ${build} into the ${ant.project.name}.jar file -->
+    <jar jarfile="${project-name}.jar" basedir="${build}" >
+      <manifest>
+        <attribute name="Main-Class" value="${main-class}"/>
+        <attribute name="Class-Path" value="${lib.list}"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="clean"
+          description="clean up">
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete file="${project-name}.jar"/>
+    <delete file="fullsubmit.tar.gz"/>
+  </target>
+
+  <target name="fullsubmit" depends="clean"
+          description="Create a tar.gz file to upload to the autograder">
+    <tar destfile="fullsubmit.tar.gz"  compression="gzip">
+      <tarfileset dir="${src}" prefix="src/">
+        <include name="*.java" />
+      </tarfileset>
+      <tarfileset dir="${src}">
+        <include name="test*txt"/>
+      </tarfileset>
+      <tarfileset dir=".">
+        <include name="*.java" />
+        <include name="test*.txt"/>
+        <include name="build.xml"/>
+      </tarfileset>
+    </tar>
+    <echo message="Contents of fullsubmit.tar.gz:" />
+    <exec executable="tar">
+      <arg value="tzf" />
+      <arg file="fullsubmit.tar.gz" />
+    </exec>
+  </target>
+</project>

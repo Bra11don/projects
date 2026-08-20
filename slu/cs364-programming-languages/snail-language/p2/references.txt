@@ -1,0 +1,8 @@
+REFERENCES
+- https://snail-language.github.io/docs/language-basics
+- https://colab.research.google.com/drive/1zoB_XvxwZIlk4LCwq7jVDGqonMgcXpWA#scrollTo=05Q43EYwbJ9n => my notes on topo sort from CS362
+- https://en.wikipedia.org/wiki/Depth-first_search
+- https://en.wikipedia.org/wiki/Depth-first_search
+- https://en.wikipedia.org/wiki/Topological_sort
+- https://www.geeksforgeeks.org/python-program-for-topological-sorting/#
+- https://dev.to/mfts/how-to-write-a-perfect-readme-for-your-github-project-59f2 => what to put on my readme

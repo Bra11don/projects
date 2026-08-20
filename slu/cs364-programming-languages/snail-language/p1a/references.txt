@@ -1,0 +1,3 @@
+REFERENCES
+- http://reasonmlhub.com/exploring-reasonml/ch_lists.html#creating-and-pattern-matching-reasonmls-lists
+- https://reasonml.github.io/docs/en/option#:~:text=Options%20are%20a%20built-in%20variant%20that%20represent%20the,no%20%22null%22%20value%20that%20any%20type%20might%20assume.

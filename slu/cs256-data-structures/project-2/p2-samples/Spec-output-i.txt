@@ -1,0 +1,7 @@
+Processing orders...
+---End of Day---
+Orders Processed: 6
+---Trader Info---
+Trader 0 bought 0 and sold 2 for a net transfer of $166
+Trader 1 bought 63 and sold 0 for a net transfer of $-5359
+Trader 2 bought 24 and sold 85 for a net transfer of $5193

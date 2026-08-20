@@ -1,0 +1,8 @@
+COMMENT: Spec example, TL mode generating some orders.
+MODE: TL
+NUM_TRADERS: 2
+NUM_STOCKS: 2
+0 SELL T0 S0 $58 #45
+0 BUY T1 S0 $58 #45
+1 SELL T1 S1 $58 #45
+1 BUY T0 S1 $58 #45

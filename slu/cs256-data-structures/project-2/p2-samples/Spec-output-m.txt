@@ -1,0 +1,7 @@
+Processing orders...
+Median match price of Stock 0 at time 2 is $81
+Median match price of Stock 0 at time 3 is $76
+Median match price of Stock 0 at time 4 is $76
+Median match price of Stock 1 at time 4 is $83
+---End of Day---
+Orders Processed: 6

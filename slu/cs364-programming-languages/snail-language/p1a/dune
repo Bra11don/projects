@@ -1,0 +1,24 @@
+(executable
+ (name test_p1a1)
+ (promote (until-clean))
+ (modules P1a1 Test_p1a1))
+
+(executable
+ (name test_p1a2)
+ (promote (until-clean))
+ (modules P1a2 Test_p1a2))
+
+(executable
+ (name test_p1a3)
+ (promote (until-clean))
+ (modules P1a3 Test_p1a3))
+
+(executable
+ (name test_p1a4)
+ (promote (until-clean))
+ (modules P1a4 Test_p1a4))
+
+(executable
+ (name test_p1a5)
+ (promote (until-clean))
+ (modules P1a5 Test_p1a5))

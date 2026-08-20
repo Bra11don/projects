@@ -1,0 +1,4 @@
+(lang dune 3.16)
+(package
+    (name snail_interpreter)
+    (synopsis "Snail language interpreter"))

@@ -1,0 +1,4 @@
+LET WHILE
+"thisIsAnEvenLongerIdentifierThatShouldTriggerAnErrorBecauseItExceedsTheMaxLengthForIdentifiersInTheLexerthisIsAnEvenLongerIdentifierThatShouldTriggerAnErrorBecauseItExceedsTheMaxLengthForIdentifiersInTheLexerthisIsAnEvenLongerIdentifierThatShouldTriggerAnErrorBecauseItExceedsTheMaxLengthForIdentifiersInTheLexerthisIsAnEvenLongerIdentifierThatShouldTriggerAnErrorBecauseItExceedsTheMaxLengthForIdentifiersInTheLexer"
+"String with actual null character \0 in it"
+"Mixing escapes: \n \t \b \r \f \\ \" \' \0"

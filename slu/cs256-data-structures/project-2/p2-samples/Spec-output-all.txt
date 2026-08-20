@@ -1,0 +1,17 @@
+Processing orders...
+Trader 1 purchased 11 shares of Stock 0 from Trader 2 for $81/share
+Median match price of Stock 0 at time 2 is $81
+Trader 2 purchased 24 shares of Stock 0 from Trader 2 for $71/share
+Median match price of Stock 0 at time 3 is $76
+Trader 1 purchased 15 shares of Stock 1 from Trader 2 for $92/share
+Trader 1 purchased 17 shares of Stock 1 from Trader 2 for $84/share
+Trader 1 purchased 18 shares of Stock 1 from Trader 2 for $83/share
+Trader 1 purchased 2 shares of Stock 1 from Trader 0 for $83/share
+Median match price of Stock 0 at time 4 is $76
+Median match price of Stock 1 at time 4 is $83
+---End of Day---
+Orders Processed: 6
+---Trader Info---
+Trader 0 bought 0 and sold 2 for a net transfer of $166
+Trader 1 bought 63 and sold 0 for a net transfer of $-5359
+Trader 2 bought 24 and sold 85 for a net transfer of $5193

@@ -1,0 +1,19 @@
+k Almoign
+r
+p
+l
+p
+s
+c Saguaro Pinnacling
+a 10
+p
+k Saguaro Saguaro cercus
+k guiltlessness
+r
+p
+d 1
+b 1
+p
+s
+p
+q

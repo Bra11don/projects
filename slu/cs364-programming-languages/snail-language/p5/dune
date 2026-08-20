@@ -1,0 +1,6 @@
+(executable
+    (name interpreter)
+    (public_name interpreter.exe)
+    (modules ast interpreter opsems)
+    (libraries str yojson)
+)

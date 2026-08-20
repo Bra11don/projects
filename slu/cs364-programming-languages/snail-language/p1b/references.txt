@@ -1,0 +1,5 @@
+REFERENCES
+- https://reasonml.github.io/api/List.html
+- http://reasonmlhub.com/exploring-reasonml/ch_lists.html#:~:text=ReasonML%20has%20its%20own%20operator%20for%20concatenating%20lists%3A,-%20%3A%20list%28string%29%20%3D%20%5B%22a%22%2C%20%22b%22%2C%20%22c%22%2C%20%22d%22%5D
+- https://stackoverflow.com/questions/33923/what-is-tail-recursion
+- https://reasonml.github.io/docs/en/option

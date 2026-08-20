@@ -1,0 +1,5 @@
+# References
+
+1. ReasonML Documentation, https://reasonml.github.io/docs/
+
+2. Snail Language Documentation, https://snail-language.github.io/docs/
