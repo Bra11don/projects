@@ -12,4 +12,5 @@ A collection of coursework and independent software projects.
 - **Progressive Sudoku** — A Sudoku solver developed through a sequence of increasingly concurrent implementations.
 - **Collective Operations** — Broadcast, gather, reduce, and scatter exercises for moving data across distributed processes.
 
-Historical implementation snapshots are retained inside each project's `archive/` directory where applicable.
+The repository contains project source and explanatory documentation; lecture
+notes, assignment handouts, build output, and intermediate drafts are excluded.
